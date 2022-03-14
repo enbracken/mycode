@@ -1,5 +1,6 @@
 # mycode
 Tracking my code through Alta3 training
+I want to learn how to version control projects with git.
 
 # mycode (Project Title)
 
