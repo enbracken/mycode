@@ -14,12 +14,14 @@ def main():
     # C Otter Penguin
     # D Fire Ferret
 
-    Pet = input(''' What would you have as a pet? Enter a letter:
+    Pet = input('''Find out what Avatar nation you hail from!
+What would you have as a pet? Enter a letter:
     A - Dragon
     B - Flying Bison
     C - Otter Penguin
     D - Fire Ferret
-    ''')
+    
+''')
 
 
     # Define Bender style!
