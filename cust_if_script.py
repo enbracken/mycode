@@ -29,7 +29,7 @@ What would you have as a pet? Enter a letter:
         message = message1  + 'Fire' + message2
     elif Pet.upper() == 'B':
         message = message1  + 'Air' + message2
-    elif Pet.upper() == 'B':
+    elif Pet.upper() == 'C':
         message = message1  + 'Water' + message2    
     elif Pet.upper() == 'D':
         message = message1  + 'Earth' + message2
