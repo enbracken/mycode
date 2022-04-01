@@ -12,10 +12,13 @@ def main():
     swapper = Cheat_Swapper()
     # the player known as the loaded_dice
     loaded_dice = Cheat_Loaded_Dice()
+    # the player will mulligan until happy
+    mulligan = Cheat_Mulligan()
 
     # track scores for both players
     swapper_score = 0
     loaded_dice_score = 0
+    mulligan_score = 0
 
     # how many games we want to run
     number_of_games = 100000
@@ -27,9 +30,11 @@ def main():
     while game_number < number_of_games:
         swapper.roll()
         loaded_dice.roll()
+        mulligan.roll()
 
         swapper.cheat()
         loaded_dice.cheat()
+        mulligan.cheat()
         """Remove # before print statements to see simulation running
            Simulation takes approximately one hour to run with print
            statements or ten seconds with print statements
@@ -37,12 +42,13 @@ def main():
 
         #print("Cheater 1 rolled" + str(swapper.get_dice()))
         #print("Cheater 2 rolled" + str(loaded_dice.get_dice()))
-        if sum(swapper.get_dice()) == sum(loaded_dice.get_dice()):
+        #print("Cheater 3 rolled" + str(mulligan.get_dice()))
+        if sum(mulligan.get_dice()) == sum(loaded_dice.get_dice()):
             #print("Draw!")
             pass
-        elif sum(swapper.get_dice()) > sum(loaded_dice.get_dice()):
+        elif sum(mulligan.get_dice()) > sum(loaded_dice.get_dice()):
             #print("Dice swapper wins!")
-            swapper_score+= 1
+            mulligan_score+= 1
         else:
             #print("Loaded dice wins!")
             loaded_dice_score += 1
@@ -53,14 +59,14 @@ def main():
     print("-------------------")
     print("Final scores")
     print("------------")
-    print(f"Swapper won: {swapper_score}")
+    print(f"Mulligan won: {mulligan_score}")
     print(f"Loaded dice won: {loaded_dice_score}")
 
     # determine the winner
-    if swapper_score == loaded_dice_score:
+    if mulligan_score == loaded_dice_score:
         print("Game was drawn")
-    elif swapper_score > loaded_dice_score:
-        print("Swapper won most games")
+    elif mulligan_score > loaded_dice_score:
+        print("Mulligan won most games")
     else:
         print("Loaded dice won most games")
 

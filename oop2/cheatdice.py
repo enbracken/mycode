@@ -31,4 +31,12 @@ class Cheat_Loaded_Dice(Player): # inheritance of Player
               self.dice[i] += 1
           i += 1
 
+# allows user to mulligan (re-roll if less than 3)
+class Cheat_Mulligan(Player): #inheritance of Player
+    def cheat(self):
+        i = 0
+        while i < len(self.dice):
+            while self.dice[i] < 3:
+                    self.dice[i] = randint(1,6) #1 to 6 inclusive
+            i += 1
 
